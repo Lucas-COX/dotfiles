@@ -1,27 +1,35 @@
 " Vim plug stuff
 call plug#begin()
 
-Plug 'ayu-theme/ayu-vim'
+" Theme
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+" Fuzzy File Finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+" Development Plugins
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'preservim/nerdtree'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
-Plug 'neovimhaskell/haskell-vim' 
 Plug 'tpope/vim-sensible'
 Plug 'Valloric/YouCompleteMe'
-Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
+
+" Interface stuff
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
 " Theming
 set termguicolors
-let ayucolor="dark"
-let g:ayu_extended_palette = 1
-colorscheme ayu
-hi Normal guibg=NONE ctermbg=NONE
+set cursorline
+colorscheme dracula
+" hi Normal guibg=NONE ctermbg=NONE
 
 " Enable syntax
 syntax on
@@ -29,7 +37,7 @@ syntax on
 " Change leader key to <space>
 let mapleader=" "
 
-" Enable plugin, ident and filetype
+" Enable plugin, indent and filetype
 filetype plugin indent on
 
 " Clipboard
@@ -69,10 +77,6 @@ map <C-k> <C-W><C-K>
 map <C-l> <C-W><C-L>
 map <C-h> <C-W><C-H>
 
-" Better terminal experience
-map <C-t> :terminal<cr>i
-tnoremap <Esc> <C-\><C-n>
-
 " You Complete Me
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -94,6 +98,9 @@ let g:airline_powerline_fonts = 1
 
 " Python stuff
 let g:python3_host_prog = '/home/lucas/.pyenv/versions/vim/bin/python3'
+
+" IndentLine
+let g:indentLine_setColors = 1
 
 " Haskell stuff
 let g:haskell_classic_highlighting = 1
