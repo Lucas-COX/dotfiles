@@ -17,6 +17,8 @@ installing the markdown-preview package :
 ```vim
 :call mkdp#util#install()
 ```
+Make sure that you have `cmake` installed before installing `YouCompleteMe`,
+else you will have to compile it by yourself.
 
 ## :bulb: Tips
 

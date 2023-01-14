@@ -3,6 +3,7 @@ call plug#begin()
 
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'ayu-theme/ayu-vim'
 
 " Fuzzy File Finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -29,7 +30,7 @@ call plug#end()
 set termguicolors
 set cursorline
 colorscheme dracula
-" hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 
 " Enable syntax
 syntax on
@@ -101,6 +102,7 @@ let g:python3_host_prog = '/home/lucas/.pyenv/versions/vim/bin/python3'
 
 " IndentLine
 let g:indentLine_setColors = 1
+let g:indentLine_setConceal = 0
 
 " Haskell stuff
 let g:haskell_classic_highlighting = 1
