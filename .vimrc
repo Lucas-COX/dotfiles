@@ -1,7 +1,7 @@
 " Vim plug stuff
 call plug#begin()
 
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'preservim/nerdtree'
@@ -12,18 +12,25 @@ Plug 'tpope/vim-sensible'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
-" You Complete Me
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-" Global stuff
-colorscheme dracula
+" Theming
+set termguicolors
+let ayucolor="dark"
+let g:ayu_extended_palette = 1
+colorscheme ayu
 hi Normal guibg=NONE ctermbg=NONE
+
+" Enable syntax
 syntax on
+
+" Change leader key to <space>
 let mapleader=" "
+
+" Enable plugin, ident and filetype
+filetype plugin indent on
 
 " Clipboard
 set clipboard=unnamed
@@ -34,7 +41,6 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
-filetype plugin indent on
 
 " Mouse handling
 set mouse=a
@@ -46,7 +52,7 @@ set encoding=utf-8
 " Line numbers
 set number
 
-" Ensure lines are not longer than 80 characters
+" Ensure lines are not longer thant 80 characters
 set textwidth=79
 
 " Better tab experience
@@ -58,26 +64,35 @@ map <leader>to :tabonly<cr>
 " Better split experience
 set splitbelow
 set splitright
-map <C-k> <C-W><C-J>
-map <C-i> <C-W><C-K>
+map <C-j> <C-W><C-J>
+map <C-k> <C-W><C-K>
 map <C-l> <C-W><C-L>
-map <C-j> <C-W><C-H>
+map <C-h> <C-W><C-H>
 
 " Better terminal experience
 map <C-t> :terminal<cr>i
 tnoremap <Esc> <C-\><C-n>
 
+" You Complete Me
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_key_list_select_completion = ['<TAB>']
+let g:ycm_key_list_previous_completion = ['<S-TAB>']
+
 " Ctrl + P to Fuzzy File Finder
 map <C-p> :FZF<cr>
 
-" Nerd Tree stuff
+" NerdTree stuff
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<cr>
 let NERDTreeShowHidden=1
 
+" Airline stuff
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
 " Python stuff
-let python_highlight_all=1
 let g:python3_host_prog = '/home/lucas/.pyenv/versions/vim/bin/python3'
 
 " Haskell stuff

@@ -52,6 +52,13 @@ tmux
 <prefix> o
 ```
 
+## Window commands
+
+**Move to the next window** using :
+```plaintext
+<prefix> p
+```
+
 
 ## :bulb: Recommandations from thoughtbot
 - **Use a single client** - It is better to focus on a single tmux window, even

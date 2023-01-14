@@ -7,18 +7,32 @@ export ZSH="$HOME/.oh-my-zsh"
 # Update oh my zsh without asking
 zstyle ':omz:update' mode auto
 
-plugins=(
-    colored-man-pages
-    fzf
-    git
-    python
-    gh
-    mysql-colorize
-    nvm
-    yarn
-    z
-    zsh-syntax-highlighting
-)
+if [[ $TERM_PROGRAM != tmux ]] then
+    plugins=(
+        colored-man-pages
+        fzf
+        git
+        python
+        gh
+        mysql-colorize
+        nvm
+        z
+        zsh-autosuggestions
+        zsh-syntax-highlighting
+    )
+else
+    plugins=(
+        colored-man-pages
+        fzf
+        git
+        python
+        gh
+        mysql-colorize
+        nvm
+        z
+        zsh-syntax-highlighting
+    )
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -55,10 +69,10 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv init --path)"
 
-
 # Aliases
 alias ls="exa --group-directories-first --icons"
-alias vim="nvim"
+alias vim=nvim
+alias mq="sudo /etc/init.d/mysql start"
 alias bat="batcat"
 alias fp="fzf --preview 'batcat --style=numbers --color=always --line-range :500 {}'"
 
