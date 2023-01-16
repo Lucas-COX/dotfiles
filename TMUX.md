@@ -12,6 +12,10 @@ binded by default to `Ctrl+b`.
 ```bash
 tmux
 ```
+or the custom script
+```bash
+tat
+```
 
 ---
 **Detach from a session** and keep it running in background using :
@@ -37,28 +41,38 @@ tmux
 
 **Split your window horizontally** using :
 ```plaintext
-<prefix> %
+<prefix> -
 ```
 
 ---
 **Split your window vertically** using :
 ```plaintext
-<prefix> "
+<prefix> |
 ```
 
 ---
-**Move to other pane** using :
+**Move to other panes** using :
 ```plaintext
-<prefix> o
+<prefix> h (Left)
+<prefix> j (Bottom)
+<prefix> k (Top)
+<prefix> l (Right)
 ```
 
 ## Window commands
+
+**Create a new window** using :
+```plaintext
+<prefix> c
+```
 
 **Move to the next window** using :
 ```plaintext
 <prefix> p
 ```
-
+or using the number keys :
+```
+<prefix> [0,1,2,...]
 
 ## :bulb: Recommandations from thoughtbot
 - **Use a single client** - It is better to focus on a single tmux window, even
