@@ -75,12 +75,16 @@ export PATH="$HOME/.scripts:$PATH"
 # Aliases
 alias ls="exa --group-directories-first --icons"
 alias vim=nvim
-alias mq="sudo /etc/init.d/mysql start"
 alias bat="batcat"
 alias fp="fzf --preview 'batcat --style=numbers --color=always --line-range :500 {}'"
 
 # Use CTRL + P to clear terminal
 bindkey -s '^p' 'clear -x^M'
+
+# Start tmux by default
+if [[ -z "$TMUX" ]]; then
+   tat
+fi
 
 # Starship prompt
 eval "$(starship init zsh)"

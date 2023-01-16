@@ -8,6 +8,9 @@ packages :
 bat
 exa
 fzf
+nvm
+pyenv
+tpm
 vim-plug
 ```
 

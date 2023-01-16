@@ -66,6 +66,7 @@ tat
 <prefix> c
 ```
 
+---
 **Move to the next window** using :
 ```plaintext
 <prefix> p
@@ -73,6 +74,21 @@ tat
 or using the number keys :
 ```
 <prefix> [0,1,2,...]
+```
+
+## Copy commands
+
+**Enter copy mode** using :
+```plaintext
+<prefix> [
+```
+
+And use vim controls to move, select and copy
+
+**Exit copy mode** using :
+```plaintext
+Ctrl+c
+```
 
 ## :bulb: Recommandations from thoughtbot
 - **Use a single client** - It is better to focus on a single tmux window, even
