@@ -4,6 +4,7 @@ call plug#begin()
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ayu-theme/ayu-vim'
+Plug 'NLKNguyen/papercolor-theme'
 
 " Fuzzy File Finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -16,9 +17,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-syntastic/syntastic'
+Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-surround'
 
 " Interface stuff
 Plug 'preservim/nerdtree'
+Plug 'luochen1990/rainbow'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
@@ -126,6 +130,13 @@ autocmd VimResized * :wincmd =
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
+
+" Rainbow brackets
+let g:rainbow_active = 1
+
+" Replace f with sneak
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
 
 " Running specs
 map <Leader>r :call RunCurrentSpecFile()<CR>
