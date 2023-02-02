@@ -1,0 +1,28 @@
+"" Source your .vimrc
+" source ~/.vimrc
+
+Plug 'tpope/vim-surround'
+
+" Common settings
+set scrolloff=5
+set nu
+set incsearch
+set noerrorbells
+set clipboard+=unnamed
+
+" IDEA settings
+set ideajoin
+set ideastatusicon=gray
+set ideastrictmode
+
+" Mappings
+map <leader>r <Action>(RenameElement)
+map <leader>l <Action>(ReformatCode)
+map <leader>z <Action>(ToggleDistractionFreeMode)
+
+map <leader>d <Action>(Debug)
+map <leader>b <Action>(ToggleLineBreakpoint)
+
+" Replace f with sneak
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
