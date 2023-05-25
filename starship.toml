@@ -128,6 +128,7 @@ symbol = " "
 
 [python]
 symbol = " "
+disabled = true
 
 [rlang]
 symbol = "ﳒ "
