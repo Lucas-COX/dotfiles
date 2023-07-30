@@ -53,11 +53,6 @@ if [[ $TERM_PROGRAM != tmux ]] then
     export PYENV_ROOT="$HOME/.pyenv"
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
-    # Add Rover to path
-    if [ -d $HOME/.rover/bin ] ; then
-        export PATH="$HOME/.rover/bin:$PATH"
-    fi
-
     # GVM start
     [[ -s "/$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
@@ -65,6 +60,9 @@ if [[ $TERM_PROGRAM != tmux ]] then
     export PYENV_ROOT="$HOME/.pyenv"
     command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
+
+    # Rbenv start
+    eval "$(rbenv init -)"
 
     # Add scripts to PATH
     export PATH="$HOME/.scripts:$PATH"
