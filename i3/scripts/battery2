@@ -94,11 +94,11 @@ else:
             return config.get("color_70", "#FFFF33")
         if percent < 80:
             return config.get("color_80", "#FFFF66")
-        return config.get("color_full", "#aaFF66") # default is #FFFFFF
+        return config.get("color_full", "#FFFFFF")
 
     form =  '<span color="{}">{}%</span>'
     fulltext += form.format(color(percentleft), percentleft)
-    fulltext += timeleft
+    #fulltext += timeleft
 
 print(fulltext)
 print(fulltext)
