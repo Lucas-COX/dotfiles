@@ -3,11 +3,16 @@ call plug#begin()
 " Development
 Plug 'vim-scripts/c.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'sheerun/vim-polyglot'
 Plug 'mechatroner/rainbow_csv'
 
+" Utility
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Interface
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-sensible'
 Plug 'crusoexia/vim-monokai'
