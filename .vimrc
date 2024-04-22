@@ -5,6 +5,7 @@ Plug 'vim-scripts/c.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'sheerun/vim-polyglot'
 Plug 'mechatroner/rainbow_csv'
+Plug 'ekalinin/Dockerfile.vim'
 
 " Utility
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
@@ -16,6 +17,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-sensible'
 Plug 'crusoexia/vim-monokai'
+
+" Random
+Plug 'vimsence/vimsence'
 
 call plug#end()
 
