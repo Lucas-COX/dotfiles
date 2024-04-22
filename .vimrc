@@ -30,7 +30,11 @@ syntax on
 colorscheme monokai
 set termguicolors
 
+" Line numbers
 set number
+
+" Change directory on file change
+set autochdir
 
 " Use spaces for indentation
 set autoindent
