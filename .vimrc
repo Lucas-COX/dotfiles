@@ -1,25 +1,37 @@
 call plug#begin()
 
-" Development
+" Language specific
 Plug 'vim-scripts/c.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'sheerun/vim-polyglot'
 Plug 'mechatroner/rainbow_csv'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 
-" Utility
+" Global
+Plug 'sheerun/vim-polyglot'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-sensible'
+
+" Utility
+Plug 'junegunn/fzf.vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-surround'
 
 " Interface
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-sensible'
+Plug 'Yggdroot/indentLine'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'crusoexia/vim-monokai'
+Plug 'preservim/nerdtree'
 
 " Random
+Plug 'junegunn/goyo.vim'
+Plug 'romainl/vim-cool'
 Plug 'vimsence/vimsence'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -30,11 +42,11 @@ syntax on
 colorscheme monokai
 set termguicolors
 
+" Enable icons
+set encoding=UTF-8
+
 " Line numbers
 set number
-
-" Change directory on file change
-set autochdir
 
 " Use spaces for indentation
 set autoindent
@@ -64,3 +76,13 @@ hi GitGutterDelete guifg=#e73c50 ctermfg=196
 hi Normal ctermbg=NONE guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
 hi LineNr ctermbg=NONE guibg=NONE
+
+" FZF
+map <C-p> :FZF<CR>
+map <C-f> :Rg<CR>
+
+" NerdTree
+nnoremap <C-n> :NERDTreeToggle<CR>
+
+" Disable conceal
+let g:indentLine_setConceal = 0
