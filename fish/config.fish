@@ -7,6 +7,16 @@ if status is-interactive
     . ~/.config/fish/env.fish
 
     # Load aliases
-    . ~/.config/fish/aliases.fish 
+    . ~/.config/fish/aliases.fish
+
+    # Load pyenv
+    pyenv init - | source
+
+    # Load prompt
     starship init fish | source
+
+    # Neofetch
+    neofetch
 end
+
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/lucas/.ghcup/bin $PATH # ghcup-env
